@@ -94,10 +94,10 @@ int main() {
 
     while (true) {
         cout << "\nMenu Utama:\n";
-        cout << "1. Konversi Kilometer/jam\n";
-        cout << "2. Konversi Centimeter/detik\n";
-        cout << "3. Konversi Meter/detik\n";
-        cout << "4. Konversi Mil/jam\n";
+        cout << "1. Konversi Kilometer/jam ke Centimeter/detik, Meter/detik, Mil/jam\n";
+        cout << "2. Konversi Centimeter/detik ke Kilometer/jam, Meter/detik, Mil/jam\n";
+        cout << "3. Konversi Meter/detik ke Kilometer/jam, centimeter/detik, Mil/jam\n";
+        cout << "4. Konversi Mil/jam ke kilometer/jam, centimeter/detik, meter/detik\n";
         cout << "Pilih menu (1-4) atau 0 untuk keluar: ";
         cin >> pilih;
 
