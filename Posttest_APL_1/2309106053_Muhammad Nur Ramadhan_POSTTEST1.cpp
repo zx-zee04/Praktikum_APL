@@ -67,7 +67,6 @@ int main() {
     string nama, nim;
     int chance = 3;
 
-    // Loop untuk login
     while (chance > 0) {
         cout << "Masukkan Nama : ";
         cin >> nama;
