@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <stdexcept>
+#include <limits>
 
 using namespace std;
 
@@ -37,19 +39,27 @@ void Tambahkan_Karyawan() {
     cout << "Divisi: ";
     getline(cin, karyawan.divisi);
     
-    while (true) {
+    bool inputValid = false;
+    do {
         cout << "Gaji: ";
-        cin >> karyawan.gaji;
-        if (karyawan.gaji >= 0) {
-            daftarKaryawan.data[daftarKaryawan.jumlahKaryawan++] = karyawan;
-            cout << "\nKaryawan baru berhasil ditambahkan." << endl;
-            return;
+        if (cin >> karyawan.gaji) {
+            if (karyawan.gaji >= 0) {
+                inputValid = true;
+            } else {
+                cout << "Gaji harus berupa angka positif." << endl;
+            }
+        } else {
+            cout << "Gaji harus berupa angka positif." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
-        else {
-            cout << "Gaji Harus Berupa Angka Positif dan Dibulatkan." << endl;
-        }
-    }
+    } 
+    while (!inputValid);
+
+    daftarKaryawan.data[daftarKaryawan.jumlahKaryawan++] = karyawan;
+    cout << "\nKaryawan baru berhasil ditambahkan." << endl;
 }
+
 
 bool Tampilkan_Karyawan() {
     char done;
