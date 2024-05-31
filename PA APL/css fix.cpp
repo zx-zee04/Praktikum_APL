@@ -173,7 +173,7 @@ public:
     }
 
     void simpanPelangganKeCSV() {
-        ofstream file(pelangganFile);
+        ofstream file("pelanggan.csv");
         if (!file.is_open()) {
             cout << "File tidak dapat dibuka.\n";
             return;
@@ -254,7 +254,7 @@ void simpanPesananKeCSV() {
 void bacaKamarDariCSV(Hotel& hotel) {
     ifstream file("kamar.csv");
     if (!file.is_open()) {
-        cout << "File tidak dapat dibuka.\n";
+        // cout << "File tidak dapat dibuka.\n";
         return;
     }
 
